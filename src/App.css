@@ -1,0 +1,109 @@
+#root {
+  margin: 0 auto;
+  padding: 0rem;
+  text-align: center;
+}
+.navBar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Para distribuir los elementos de manera uniforme */
+  color: white;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid white;
+  background-color: black;
+  height: 100px;
+  width: 100%;
+}
+.titulo{
+  font-size: 3rem;
+  padding: 10px 20px;
+}
+.cart{
+  font-size: 4rem;
+  margin: 0;
+}
+.greeting{
+  font-size: 2rem;
+  color: aqua;
+}
+
+.perifericos{
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+}
+.linkeoTitulo{
+  color: white;
+  text-decoration: none;
+}
+.linkeo{
+  margin: 0 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+.linkeo:hover{
+  color: rgb(183, 183, 183);
+}
+.itemContainer{
+  width: 250px;
+  height: 500px;
+  border: 2px solid white;
+  margin: 3rem;
+  background-color: black;
+}
+.botoncito{
+color: black;
+padding: 0;
+}
+.contenedorEntero{
+  margin-top: 6rem ;
+  display: flex;
+  justify-content: center;
+  flex-wrap:wrap ;
+}
+.linkButton{
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  color: black;
+  width: 100%;
+}
+.cardProducto {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  padding: 0; 
+  margin: 5rem 10rem;
+  background-color: black;
+  border: 2px solid white;
+}
+.divisionImagen{
+  height: 366px;
+}
+.divisionDatos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cardProducto img {
+  margin: 0;
+  width: 366px;
+}
+.cardProducto h1{
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.cardProducto h2{
+  margin: 0;
+}
+.cardProducto p{
+  width: 50%;
+  text-align: center;
+}
