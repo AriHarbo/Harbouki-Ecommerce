@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { Button } from './Buttons/Button'
+import ItemDetail from './ItemDetail'
+import { db } from '../services/firebaseConfig'
+import { getDoc, doc } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
   const [prod, setProd] = useState({})
@@ -11,10 +14,13 @@ const ItemDetailContainer = () => {
 
   console.log(prod);
   useEffect(() => {
-    fetch(`https://api.escuelajs.co/api/v1/products/${idProducto}`)
-    .then(res => res.json())
-    .then(data => setProd(data))
-    .finally(setCargando(false))
+    const productRef = doc(db, "productos", idProducto)
+    getDoc(productRef).then(snapshot => {
+      const data = snapshot.data()
+      const prodConId = {id: snapshot.id, ...data}
+      setProd(prodConId)
+    }).finally(setCargando(false))
+
   }, [idProducto]);
 
   if(cargando){
@@ -25,19 +31,9 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-    <div className='cardProducto'>
-      <div className='divisionImagen'>
-        <img src={prod.images} alt="Foto del producto"/>
-      </div>
-      <div className='divisionDatos'>
-        <h1>{prod.title}</h1>
-        <h2>Precio: {prod.price}</h2>
-        <p>{prod.description}</p>
-        <Button bgColor="green">
-          Agregar al carrito
-        </Button>
-      </div>
-    </div>
+    {prod &&
+      <ItemDetail prod={prod}/>
+    }
     </>
   )
 }

@@ -1,30 +1,42 @@
 import React, { useEffect, useState } from 'react'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
+import { collection, getDocs, query, where } from 'firebase/firestore'
+import { db } from '../services/firebaseConfig'
 
 const ItemListContainer = ({greeting}) => {
   const [items, setItems] = useState([])
   const [cargando, setCargando] = useState(true)
   
-  const {idCategoria} = useParams()
-
-  console.log(items)
-
-  useEffect(() => {
-    if(idCategoria){
-      fetch(`https://api.escuelajs.co/api/v1/products/?categoryId=${idCategoria}`)
-      .then(res => res.json())
-      .then(data => setItems(data))
-      .finally(setCargando(false))
-    }else{
-      fetch("https://api.escuelajs.co/api/v1/products")
-      .then(res => res.json())
-      .then(data => setItems(data))
-      .finally(setCargando(false))
-    }
+  const {categoria} = useParams()
 
   
-  }, [idCategoria]);
+  console.log(categoria)
+  useEffect(() => {
+   if(categoria){
+      const productosPorCat = query(collection(db, "productos"), where("category", "==", categoria))
+      getDocs(productosPorCat).then(snapshot => {
+        const prods = snapshot.docs.map(doc =>{
+          const data = doc.data()
+          return {id: doc.id, ...data}
+        })
+        setItems(prods)
+        console.log(items)
+      }).finally(setCargando(false))
+   }else{
+     getDocs(collection(db, "productos")).then(snapshot => {
+       const prods = snapshot.docs.map(doc=>{
+         const data = doc.data()
+         return {id: doc.id, ...data}
+         
+        })
+        setItems(prods)
+      }).finally(setCargando(false))  
+      
+      
+    }
+
+  },    [categoria] );
   
   if(cargando){
     return (
