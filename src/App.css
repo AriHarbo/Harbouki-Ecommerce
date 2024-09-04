@@ -325,6 +325,10 @@ transform: scale(1.05);
   background-color: #2E2E2C;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contenedorCartItem button:hover{
+  background-color: #343433;
 }
 .cantItemsEnCarrito{
   text-decoration: none;

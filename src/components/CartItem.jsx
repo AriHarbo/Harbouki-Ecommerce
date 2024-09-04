@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
 
 
 const CartItem = ({producto}) => {
 
+  const {eliminarProducto} = useContext(CartContext)
 
    console.log(producto.id)
   return (
@@ -18,7 +19,7 @@ const CartItem = ({producto}) => {
       <p>${producto.price}</p>
     </div>
     </Link>
-    <button>Eliminar producto</button>
+    <button onClick={()=> eliminarProducto(producto.id)}>Eliminar producto</button>
     </div>
     </>
   )
