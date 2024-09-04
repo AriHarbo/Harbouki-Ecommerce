@@ -1,8 +1,7 @@
-# React + Vite
+# Ecommerce creado en React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta es una pagina que simula un ecommerce utilizando react para el proyecto final del curso de React de coderhouse.
 
-Currently, two official plugins are available:
+Para hacer correr la pagina hay que utilizar el siguiente comando en la terminal:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+npm run dev
