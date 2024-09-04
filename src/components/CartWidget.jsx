@@ -13,7 +13,7 @@ export const CartWidget = () => {
     <div className='contenedorCart'>
       <span >{cart.length}</span>
     <div className='carrito'>
-      <img className='imagenCarrito' src="../src/assets/images/carro-de-la-carretilla.png" alt="Imagen del carrito" />
+      <img className='imagenCarrito' src="../public/images/carro-de-la-carretilla.png" alt="Imagen del carrito" />
     </div>
     </div>
     </Link>
