@@ -30,7 +30,7 @@ const Cart = () => {
       <div className='cartHeader'>
         <div className='tituloCart'>
           <h1>CARRITO</h1>
-          <img src="../public/images/carro-de-la-carretilla.png" alt="Imagen de carrito" width="60px" height="60px" />
+          <img src="/images/carro-de-la-carretilla.png" alt="Imagen de carrito" width="60px" height="60px" />
         </div>
         <div className='vaciarCart'>
           <button onClick={vaciarCart}>Vaciar carrito</button>
