@@ -72,6 +72,13 @@
   border-bottom-right-radius: 10px;
   box-shadow: 0px 0px 25px 3px rgba(0,0,0,0.75);-webkit-box-shadow: 0px 0px 25px 3px rgba(0,0,0,0.75);-moz-box-shadow: 0px 0px 25px 3px rgba(0,0,0,0.75);
 }
+.itemContainer img {
+  width: 100%; /* Hace que la imagen ocupe todo el ancho disponible del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-width: 229px; /* Limita el ancho máximo */
+  max-height: 225px; /* Limita la altura máxima */
+  object-fit: cover; /* Recorta la imagen para que siempre se ajuste sin deformarse */
+}
 
 .itemContainer:hover {
   transform: scale(1.02);
@@ -477,6 +484,9 @@ transform: scale(1.05);
 }
 
 /* TODA ESTA PARTE SON LOS ESTILOS PARA CAMBIAR EL THEME*/
+.light .cartLength{
+  color: rgb(60, 61, 55);
+}
 .light .contenedorEntero{
   background-color: #f8ecdb;
 }
@@ -558,4 +568,35 @@ transform: scale(1.05);
 }
 .light .carritoVacio{
   color: #1E201E;
+}
+.light .eliminarButton{
+  background-color: #ECDFCC;
+  color: #3C3D37;
+}
+.light .eliminarButton:hover{
+  background-color: #e6dbca;
+}
+.light .vaciarCart button{
+  background-color: #ECDFCC;
+  color: #3C3D37;
+}
+.light .formFieldset{
+  background-color: #ECDFCC;
+  border: 1px solid #1E201E;
+  color: #3C3D37;
+}
+.light .formFieldset legend{
+  background-color: #ECDFCC;
+  border: 1px solid #1E201E;
+}
+.light .formFieldset button{
+  background-color: #1E201E;
+  color: #ECDFCC;
+}
+.light .formFieldset button:hover{
+  background-color: #ECDFCC;
+  color: #1E201E;
+}
+.light .formFieldset input{
+  background-color: #F8ECDB;
 }

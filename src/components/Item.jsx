@@ -10,7 +10,7 @@ const Item = ({ producto }) => {
   //En vez de mandarte a la pagina de detalles directamente se abria ahi en la misma pagina los detalles del producto
   return (
     <div className='itemContainer'>
-      <img src={producto.image} alt="Foto del producto" width="230px" height="230px" />
+      <img src={producto.image} alt="Foto del producto" width="229px" height="225px" />
       <div className='itemDatosContainer'>
         <h3>{producto.title}</h3>
         <p>Precio: {producto.price}</p>
