@@ -10,6 +10,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Cart from './components/Cart/'
 import { CartContextProvider } from './context/CartContext'
 import { ThemeContext } from './context/ThemeContext'
+import Checkout from './components/Checkout'
 
 function App() {
   
@@ -25,6 +26,7 @@ function App() {
         <Route path='/categoria/:categoria' element={<ItemListContainer/>}/>
         <Route path='/detalle/:idProducto' element={<ItemDetailContainer/>}/>
         <Route path='/cart' element={<Cart/>}/>
+        <Route path='/checkout/:total' element={<Checkout/>}/>
         <Route path='*' element={<h1>ERROR 404: No encontramos la ruta</h1>}/>
       </Routes>
     </BrowserRouter>

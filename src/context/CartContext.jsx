@@ -27,7 +27,6 @@ export const CartContextProvider = ({children}) =>{
     const eliminarProducto = (id) =>{
       const newCart = cart.filter(e => e.id !== id)
       setCart(newCart)
-      console.log(cart)
     }
 
 
