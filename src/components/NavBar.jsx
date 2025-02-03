@@ -11,7 +11,7 @@ const NavBar = () => {
   return (
     <nav className='navBar'>
         <Link className='linkeoTitulo' to="/">
-        <h1 className='titulo'>HARBOUKI</h1>
+        <h1 className='titulo'>fran jayme</h1>
         </Link>
         <div className='perifericos'>
           <Link className='linkeo' to="/">Todos los productos</Link>
